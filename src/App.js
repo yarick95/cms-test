@@ -6,7 +6,8 @@ import {
   NavLink,
   Navigate,
 } from "react-router-dom";
-import tabs from "../public/tabs.json";
+// import  from "../public/tabs.json";
+import { tabsData } from "./tabs";
 
 function asyncComponentImport(tabId) {
   switch (tabId) {
@@ -28,7 +29,7 @@ const App = () => {
     <Router>
       <div>
         <nav>
-          {tabs.map((tab) => (
+          {tabsData.map((tab) => (
             <NavLink
               key={tab.id}
               to={`/${tab.id}`}
@@ -47,7 +48,7 @@ const App = () => {
                 initialTab ? <Navigate to={`/${initialTab}`} replace /> : null
               }
             />
-            {tabs.map((tab) => {
+            {tabsData.map((tab) => {
               const TabComponent = lazy(() => asyncComponentImport(tab.id));
               return (
                 <Route
