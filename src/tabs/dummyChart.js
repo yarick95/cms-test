@@ -35,5 +35,3 @@ export const DummyChart = () => {
     </svg>
   );
 };
-
-// export default DummyChart;

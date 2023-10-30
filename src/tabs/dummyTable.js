@@ -32,5 +32,3 @@ export const DummyTable = () => {
     </div>
   );
 };
-
-// export default DummyTable;

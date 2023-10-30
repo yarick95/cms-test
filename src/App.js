@@ -1,4 +1,4 @@
-import React, { Suspense, lazy, useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -16,15 +16,11 @@ import { DummyList } from "./tabs/dummyList";
 function asyncComponentImport(tabId) {
   switch (tabId) {
     case "dummyTable":
-      // return import("./tabs/dummyTable");
       return DummyTable;
     case "dummyChart":
-      // return import("./tabs/dummyChart");
       return DummyChart;
     case "dummyList":
-    //   // return import("./tabs/dummyList");
       return DummyList;
-
     default:
       throw new Error(`Unknown tab ID: ${tabId}`);
   }
@@ -65,9 +61,6 @@ const App = () => {
               }
             />
             {tabsData.map((tab) => {
-              {
-                /* const TabComponent = lazy(() => asyncComponentImport(tab.id)); */
-              }
               const TabComponent = asyncComponentImport(tab.id);
               return (
                 <Route

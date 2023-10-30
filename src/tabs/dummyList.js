@@ -39,5 +39,3 @@ export const DummyList = () => {
     </div>
   );
 };
-
-// export default DummyList;

@@ -4,6 +4,7 @@ export const tabsData = [
     title: "Dummy Table",
     order: 1,
     path: "tabs/dummyTable.js",
+
   },
   {
     id: "dummyChart",
@@ -18,3 +19,4 @@ export const tabsData = [
     path: "tabs/dummyList.js",
   },
 ];
+
