@@ -6,7 +6,7 @@ import {
   NavLink,
   Navigate,
 } from "react-router-dom";
-// import  from "../public/tabs.json";
+
 import { tabsData } from "./tabs";
 
 function asyncComponentImport(tabId) {
@@ -25,8 +25,16 @@ function asyncComponentImport(tabId) {
 const App = () => {
   const [initialTab, setInitialTab] = useState("");
 
+  useEffect(() => {
+    const sortedTabs = tabsData.sort((a, b) => a.order - b.order);
+
+    if (sortedTabs.length > 0) {
+      setInitialTab(sortedTabs[0].id);
+    }
+  }, []);
+
   return (
-    <Router>
+    <Router basename="/cms-test">
       <div>
         <nav>
           {tabsData.map((tab) => (
