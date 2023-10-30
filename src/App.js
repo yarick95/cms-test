@@ -6,6 +6,7 @@ import {
   NavLink,
   Navigate,
 } from "react-router-dom";
+import tabs from "../public/tabs.json";
 
 function asyncComponentImport(tabId) {
   switch (tabId) {
@@ -21,28 +22,7 @@ function asyncComponentImport(tabId) {
 }
 
 const App = () => {
-  const [tabs, setTabs] = useState([]);
   const [initialTab, setInitialTab] = useState("");
-
-  useEffect(() => {
-    fetch("/tabs.json")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((tabsData) => {
-        const sortedTabs = tabsData.sort((a, b) => a.order - b.order);
-        setTabs(sortedTabs);
-        if (sortedTabs.length > 0) {
-          setInitialTab(sortedTabs[0].id);
-        }
-      })
-      .catch((error) => {
-        console.error("Fetch error:", error);
-      });
-  }, []);
 
   return (
     <Router>
