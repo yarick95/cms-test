@@ -1,6 +1,6 @@
 import React from "react";
 
-const DummyChart = () => {
+export const DummyChart = () => {
   const data = [25, 30, 45, 60, 10, 65, 75];
 
   const maxValue = Math.max(...data);
@@ -36,4 +36,4 @@ const DummyChart = () => {
   );
 };
 
-export default DummyChart;
+// export default DummyChart;

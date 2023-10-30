@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const DummyList = () => {
+export const DummyList = () => {
   const [list, setList] = useState(["Item 1", "Item 2", "Item 3"]);
   const [newItem, setNewItem] = useState("");
 
@@ -40,4 +40,4 @@ const DummyList = () => {
   );
 };
 
-export default DummyList;
+// export default DummyList;

@@ -6,7 +6,7 @@ const data = [
   { id: 3, name: "Mike Johnson", age: 45, occupation: "Manager" },
 ];
 
-const DummyTable = () => {
+export const DummyTable = () => {
   return (
     <div>
       <table style={{ width: "100%", borderCollapse: "collapse" }}>
@@ -33,4 +33,4 @@ const DummyTable = () => {
   );
 };
 
-export default DummyTable;
+// export default DummyTable;
